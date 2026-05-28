@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Standox — Приватный сервер Standoff 2</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -58,40 +55,31 @@
 </head>
 <body class="font-sans selection:bg-brand-red selection:text-white">
 
-    <!-- ФОНОВЫЙ ДЕКОР -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none overflow-hidden z-0 opacity-20">
         <div class="absolute top-[-10%] left-1/4 w-[500px] h-[500px] bg-brand-red rounded-full blur-[120px]"></div>
     </div>
 
-    <!-- ШАПКА САЙТА (HEADER) -->
     <header class="sticky top-0 z-50 bg-brand-dark/80 backdrop-blur-md border-b border-brand-border px-4 py-4">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <!-- Логотип -->
             <a href="#" class="flex items-center space-x-1">
                 <span class="font-heading font-extrabold text-2xl tracking-wider text-white">STAND<span class="text-brand-red">OX</span></span>
             </a>
 
-            <!-- Десктопная Навигация -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
-                <button onclick="openModal('download')" class="hover:text-white transition duration-200">Скачать</button>
+                <a href="https://t.me/standoxfile" target="_blank" class="hover:text-white transition duration-200">Скачать</a>
                 <button onclick="openModal('about')" class="hover:text-white transition duration-200">О проекте</button>
-                <button onclick="openModal('promo')" class="hover:text-white transition duration-200">Промокод</button>
+                <a href="https://t.me/Stand0x_bot" target="_blank" class="hover:text-white transition duration-200">Донат</a>
             </nav>
 
-            <!-- Правая панель кнопок -->
             <div class="flex items-center space-x-3">
-                <!-- Язык -->
                 <button class="text-xs bg-white/5 border border-white/10 px-2.5 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/10 transition">EN</button>
-                <!-- Telegram -->
                 <a href="https://t.me/standoxlive" target="_blank" class="w-8 h-8 flex items-center justify-center bg-white/5 border border-white/10 rounded-md text-gray-300 hover:text-brand-red hover:border-brand-red/30 transition">
                     <i class="fa-brands fa-telegram text-base"></i>
                 </a>
-                <!-- Начать играть -->
-                <button onclick="openModal('play')" class="hidden sm:inline-block bg-brand-red hover:bg-brand-red-hover px-5 py-2 rounded-lg font-heading text-xs font-bold uppercase tracking-wider text-white transition-all shadow-lg shadow-brand-red/20 active:scale-95">
+                <a href="https://t.me/standoxfile" target="_blank" class="hidden sm:inline-block bg-brand-red hover:bg-brand-red-hover px-5 py-2 rounded-lg font-heading text-xs font-bold uppercase tracking-wider text-white transition-all shadow-lg shadow-brand-red/20 active:scale-95 text-center">
                     Начать играть
-                </button>
+                </a>
                 
-                <!-- Мобильное меню (бургер) -->
                 <button onclick="toggleMobileMenu()" class="md:hidden text-gray-400 hover:text-white p-1">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
@@ -99,56 +87,49 @@
         </div>
     </header>
 
-    <!-- МОБИЛЬНОЕ МЕНЮ -->
     <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-brand-dark/95 backdrop-blur-lg flex flex-col justify-center items-center space-y-8 text-xl font-medium">
         <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-gray-400 hover:text-white text-2xl">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <button onclick="toggleMobileMenu(); openModal('download');" class="hover:text-brand-red transition">Скачать</button>
+        <a href="https://t.me/standoxfile" target="_blank" onclick="toggleMobileMenu();" class="hover:text-brand-red transition">Скачать</a>
         <button onclick="toggleMobileMenu(); openModal('about');" class="hover:text-brand-red transition">О проекте</button>
-        <button onclick="toggleMobileMenu(); openModal('promo');" class="hover:text-brand-red transition">Промокод</button>
-        <button onclick="toggleMobileMenu(); openModal('play');" class="bg-brand-red hover:bg-brand-red-hover px-6 py-3 rounded-lg font-heading text-sm font-bold uppercase tracking-wider text-white transition-all">
+        <a href="https://t.me/Stand0x_bot" target="_blank" onclick="toggleMobileMenu();" class="hover:text-brand-red transition">Донат</a>
+        <a href="https://t.me/standoxfile" target="_blank" onclick="toggleMobileMenu();" class="bg-brand-red hover:bg-brand-red-hover px-6 py-3 rounded-lg font-heading text-sm font-bold uppercase tracking-wider text-white transition-all text-center">
             Начать играть
-        </button>
+        </a>
     </div>
 
-    <!-- ГЛАВНЫЙ ЭКРАН (HERO SECTION) -->
     <section class="relative min-h-[85vh] flex flex-col justify-center items-center px-4 py-16 text-center z-10">
-        <!-- Маленький тег сверху -->
         <div class="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/20 px-4 py-1.5 rounded-full mb-6">
             <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
             <span class="text-[10px] md:text-xs uppercase font-bold tracking-widest text-brand-red">Приватный сервер Standoff 2</span>
         </div>
 
-        <!-- Заголовок -->
         <h1 class="font-heading font-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-none uppercase mb-6 select-none max-w-4xl">
             Начни играть <br>
             <span class="text-brand-red text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-400">сейчас</span>
         </h1>
 
-        <!-- Описание -->
         <p class="text-gray-400 max-w-2xl text-sm md:text-base mb-8 leading-relaxed">
             Стань счастливым игроком в <span class="text-white font-semibold">STANDOX</span>. 
             Приватный сервер Standoff 2 с уникальными режимами, системой кланов и постоянными обновлениями. Присоединяйся к большому сообществу игроков.
         </p>
 
-        <!-- Кнопки действия -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mb-10">
-            <button onclick="openModal('play')" class="w-full sm:w-auto flex items-center justify-center space-x-2 bg-brand-red hover:bg-brand-red-hover px-8 py-4 rounded-xl font-heading text-sm font-bold uppercase tracking-wider text-white transition duration-200 shadow-xl shadow-brand-red/20 active:scale-95">
+            <a href="https://t.me/standoxfile" target="_blank" class="w-full sm:w-auto flex items-center justify-center space-x-2 bg-brand-red hover:bg-brand-red-hover px-8 py-4 rounded-xl font-heading text-sm font-bold uppercase tracking-wider text-white transition duration-200 shadow-xl shadow-brand-red/20 active:scale-95 text-center">
                 <i class="fa-solid fa-play text-xs"></i>
                 <span>Начать играть</span>
-            </button>
-            <button onclick="openModal('promo')" class="w-full sm:w-auto flex items-center justify-center space-x-2 bg-white/5 border border-white/10 hover:bg-white/10 px-8 py-4 rounded-xl font-heading text-sm font-bold uppercase tracking-wider text-white transition duration-200">
-                <i class="fa-solid fa-tag text-xs text-gray-400"></i>
-                <span>Промокод</span>
-            </button>
+            </a>
+            <a href="https://t.me/Stand0x_bot" target="_blank" class="w-full sm:w-auto flex items-center justify-center space-x-2 bg-white/5 border border-white/10 hover:bg-white/10 px-8 py-4 rounded-xl font-heading text-sm font-bold uppercase tracking-wider text-white transition duration-200 text-center">
+                <i class="fa-solid fa-wallet text-xs text-gray-400"></i>
+                <span>Донат</span>
+            </a>
             <button onclick="openModal('about')" class="w-full sm:w-auto flex items-center justify-center space-x-2 bg-white/5 border border-white/10 hover:bg-white/10 px-8 py-4 rounded-xl font-heading text-sm font-bold uppercase tracking-wider text-white transition duration-200">
                 <i class="fa-solid fa-circle-info text-xs text-gray-400"></i>
                 <span>О проекте</span>
             </button>
         </div>
 
-        <!-- Счетчик онлайна (обновлен до 5 игроков) -->
         <div class="inline-flex items-center space-x-2 bg-black/40 border border-white/5 px-4 py-2 rounded-xl text-xs md:text-sm text-gray-400">
             <span class="w-2.5 h-2.5 rounded-full bg-brand-red shadow-md shadow-brand-red/50 animate-pulse"></span>
             <span>Сейчас играют:</span>
@@ -156,7 +137,6 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ: КАК НАЧАТЬ? (HOW TO START) -->
     <section id="how-to-start" class="max-w-6xl mx-auto px-4 py-20 border-t border-brand-border/40">
         <div class="mb-12">
             <div class="text-brand-red text-xs uppercase font-bold tracking-widest mb-2 flex items-center">
@@ -166,20 +146,18 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Шаг 1 -->
-            <button onclick="openModal('download')" class="text-left bg-brand-card border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-red/30 transition duration-300">
+            <a href="https://t.me/standoxfile" target="_blank" class="text-left bg-brand-card border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-red/30 transition duration-300 block">
                 <div class="absolute -right-4 -bottom-4 text-9xl font-black text-white/[0.02] select-none group-hover:text-brand-red/[0.03] transition duration-300 font-mono">01</div>
                 <div class="w-12 h-12 bg-brand-red/10 border border-brand-red/20 text-brand-red rounded-xl flex items-center justify-center mb-6 text-xl">
                     <i class="fa-solid fa-download"></i>
                 </div>
                 <h3 class="font-heading font-bold text-lg mb-2">Скачай игру</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">
-                    Выбери платформу — Android, iOS или PC — и загрузи клиент приватного сервера абсолютно бесплатно.
+                    Перейди в наш официальный репозиторий файлов и скачай актуальный клиент приватного сервера абсолютно бесплатно.
                 </p>
-            </button>
+            </a>
 
-            <!-- Шаг 2 -->
-            <button onclick="openModal('play')" class="text-left bg-brand-card border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-red/30 transition duration-300">
+            <div class="text-left bg-brand-card border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-red/30 transition duration-300">
                 <div class="absolute -right-4 -bottom-4 text-9xl font-black text-white/[0.02] select-none group-hover:text-brand-red/[0.03] transition duration-300 font-mono">02</div>
                 <div class="w-12 h-12 bg-brand-red/10 border border-brand-red/20 text-brand-red rounded-xl flex items-center justify-center mb-6 text-xl">
                     <i class="fa-solid fa-user-plus"></i>
@@ -188,10 +166,9 @@
                 <p class="text-gray-400 text-sm leading-relaxed">
                     Войди в игру и создай уникальный профиль для сохранения твоего прогресса, инвентаря и статистики.
                 </p>
-            </button>
+            </div>
 
-            <!-- Шаг 3 -->
-            <button onclick="openModal('play')" class="text-left bg-brand-card border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-red/30 transition duration-300">
+            <div class="text-left bg-brand-card border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-red/30 transition duration-300">
                 <div class="absolute -right-4 -bottom-4 text-9xl font-black text-white/[0.02] select-none group-hover:text-brand-red/[0.03] transition duration-300 font-mono">03</div>
                 <div class="w-12 h-12 bg-brand-red/10 border border-brand-red/20 text-brand-red rounded-xl flex items-center justify-center mb-6 text-xl">
                     <i class="fa-solid fa-users"></i>
@@ -200,11 +177,10 @@
                 <p class="text-gray-400 text-sm leading-relaxed">
                     Присоединяйся к заполненным серверам, открывай кейсы с крутыми скинами, создавай лобби и побеждай.
                 </p>
-            </button>
+            </div>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ: ПОЧЕМУ ИМЕННО МЫ? (FEATURES) -->
     <section id="features" class="max-w-6xl mx-auto px-4 py-20 border-t border-brand-border/40">
         <div class="mb-12">
             <div class="text-brand-red text-xs uppercase font-bold tracking-widest mb-2 flex items-center">
@@ -214,16 +190,13 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <!-- Особенность 1 -->
             <div class="bg-brand-card border border-brand-border rounded-3xl overflow-hidden flex flex-col md:flex-row hover:border-brand-red/20 transition duration-300 group">
-                <!-- Кастомная заглушка-симуляция скриншота рынка -->
                 <div class="w-full md:w-1/2 min-h-[220px] bg-gradient-to-br from-red-900/40 to-black p-6 flex flex-col justify-between border-b md:border-b-0 md:border-r border-brand-border relative overflow-hidden">
                     <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop');"></div>
                     <div class="flex justify-between items-center z-10">
                         <span class="text-[10px] font-mono font-bold bg-white/10 px-2 py-1 rounded">MARKETPLACE v2</span>
                         <span class="text-amber-400 font-bold font-mono text-xs flex items-center"><i class="fa-solid fa-coins mr-1"></i> 140 487</span>
                     </div>
-                    <!-- Изображения скинов / Иконок -->
                     <div class="grid grid-cols-3 gap-2 my-auto z-10">
                         <div class="bg-white/5 border border-white/10 rounded-lg p-2 flex flex-col items-center justify-center transform group-hover:scale-105 transition">
                             <i class="fa-solid fa-shield-halved text-brand-red text-xl mb-1"></i>
@@ -248,16 +221,13 @@
                 </div>
             </div>
 
-            <!-- Особенность 2 -->
             <div class="bg-brand-card border border-brand-border rounded-3xl overflow-hidden flex flex-col md:flex-row hover:border-brand-red/20 transition duration-300 group">
-                <!-- Кастомная заглушка-симуляция скриншота MMR -->
                 <div class="w-full md:w-1/2 min-h-[220px] bg-gradient-to-br from-purple-950/40 to-black p-6 flex flex-col justify-between border-b md:border-b-0 md:border-r border-brand-border relative overflow-hidden">
                     <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=600&auto=format&fit=crop');"></div>
                     <div class="flex justify-between items-center z-10">
                         <span class="text-[10px] font-mono font-bold bg-white/10 px-2 py-1 rounded">RATING SYSTEM</span>
                         <span class="text-purple-400 font-bold font-mono text-xs flex items-center"><i class="fa-solid fa-trophy mr-1"></i> LEAGUE</span>
                     </div>
-                    <!-- Блок со статистикой -->
                     <div class="bg-white/5 border border-white/10 rounded-xl p-3 z-10 backdrop-blur-sm">
                         <div class="flex items-center space-x-3 mb-2">
                             <div class="w-8 h-8 rounded-full bg-brand-red/20 border border-brand-red flex items-center justify-center font-bold text-brand-red font-mono text-sm">S</div>
@@ -282,7 +252,6 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ: НАШИ РЕСУРСЫ (PROMO / RESOURCES) -->
     <section id="promo" class="max-w-6xl mx-auto px-4 py-20 border-t border-brand-border/40">
         <div class="mb-12">
             <div class="text-brand-red text-xs uppercase font-bold tracking-widest mb-2 flex items-center">
@@ -292,7 +261,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Ресурс 1 (Telegram) -->
             <div class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between hover:border-brand-red/30 transition group h-64 text-left">
                 <div>
                     <div class="w-10 h-10 bg-brand-red/10 text-brand-red rounded-lg flex items-center justify-center text-lg mb-6 group-hover:scale-110 transition">
@@ -300,7 +268,7 @@
                     </div>
                     <h3 class="font-heading font-bold text-lg mb-2">Telegram-канал</h3>
                     <p class="text-gray-400 text-xs leading-relaxed">
-                        Новости, промокоды и анонсы обновлений каждый день в standoxlive. Узнавай всё самым первым.
+                        Новости, инсайды и анонсы обновлений каждый день в standoxlive. Узнавай всё самым первым.
                     </p>
                 </div>
                 <a href="https://t.me/standoxlive" target="_blank" class="text-xs font-bold text-brand-red hover:text-white transition flex items-center mt-4">
@@ -308,41 +276,38 @@
                 </a>
             </div>
 
-            <!-- Ресурс 2 (Промокоды) -->
-            <button onclick="openModal('promo')" class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between hover:border-brand-red/30 transition group h-64 text-left">
+            <a href="https://t.me/Stand0x_bot" target="_blank" class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between hover:border-brand-red/30 transition group h-64 text-left block">
                 <div>
                     <div class="w-10 h-10 bg-brand-red/10 text-brand-red rounded-lg flex items-center justify-center text-lg mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-ticket"></i>
+                        <i class="fa-solid fa-wallet"></i>
                     </div>
-                    <h3 class="font-heading font-bold text-lg mb-2">Промокоды</h3>
+                    <h3 class="font-heading font-bold text-lg mb-2">Донат-магазин</h3>
                     <p class="text-gray-400 text-xs leading-relaxed">
-                        Ежедневные бесплатные промокоды на голду и редкие предметы. Активируй в игре!
+                        Покупка голды, уникальных кастомных скинов и кейсов через нашего автоматического Telegram-бота. Полноценная поддержка.
                     </p>
                 </div>
                 <span class="text-xs font-bold text-brand-red hover:text-white transition flex items-center mt-4">
-                    Получить <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-[10px]"></i>
+                    Перейти к боту <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-[10px]"></i>
                 </span>
-            </button>
+            </a>
 
-            <!-- Ресурс 3 (Скачать) -->
-            <button onclick="openModal('download')" class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between hover:border-brand-red/30 transition group h-64 text-left">
+            <a href="https://t.me/standoxfile" target="_blank" class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between hover:border-brand-red/30 transition group h-64 text-left block">
                 <div>
                     <div class="w-10 h-10 bg-brand-red/10 text-brand-red rounded-lg flex items-center justify-center text-lg mb-6 group-hover:scale-110 transition">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <h3 class="font-heading font-bold text-lg mb-2">Скачать</h3>
+                    <h3 class="font-heading font-bold text-lg mb-2">Скачать игру</h3>
                     <p class="text-gray-400 text-xs leading-relaxed">
-                        Доступно для Android, iOS и Windows — полностью бесплатно и без вирусов.
+                        Прямая ссылка на безопасное скачивание .APK файла приватного сервера без ограничений скорости.
                     </p>
                 </div>
                 <span class="text-xs font-bold text-brand-red hover:text-white transition flex items-center mt-4">
                     Скачать <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-[10px]"></i>
                 </span>
-            </button>
+            </a>
         </div>
     </section>
 
-    <!-- ПОДВАЛ (FOOTER) -->
     <footer class="bg-black/60 border-t border-brand-border py-12 px-4 text-center text-gray-500 text-xs">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
@@ -350,49 +315,36 @@
                 <p>© 2026 Standox. Все права защищены. <br>Данный проект является фанатской приватной игрой и не связан с Axlebolt Ltd.</p>
             </div>
             <div class="flex items-center space-x-6 text-sm">
-                <button onclick="openModal('download')" class="hover:text-white transition">Скачать</button>
+                <a href="https://t.me/standoxfile" target="_blank" class="hover:text-white transition">Скачать</a>
                 <button onclick="openModal('about')" class="hover:text-white transition">О проекте</button>
-                <button onclick="openModal('promo')" class="hover:text-white transition">Промокоды</button>
+                <a href="https://t.me/Stand0x_bot" target="_blank" class="hover:text-white transition">Донат</a>
+                <button onclick="openModal('privacy')" class="text-brand-red/80 hover:text-brand-red font-medium transition">Политика конфиденциальности</button>
             </div>
         </div>
     </footer>
 
-    <!-- МОДАЛЬНОЕ ОКНО "В РАЗРАБОТКЕ" -->
     <div id="dev-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0">
-        <!-- Тело модалки -->
-        <div class="bg-brand-card border border-brand-border rounded-2xl p-8 max-w-sm w-full text-center relative transform scale-95 transition-transform duration-300 shadow-2xl shadow-brand-red/10">
-            <!-- Кнопка закрытия -->
+        <div id="modal-container" class="bg-brand-card border border-brand-border rounded-2xl p-8 max-w-sm w-full text-center relative transform scale-95 transition-transform duration-300 shadow-2xl shadow-brand-red/10">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
             
-            <!-- Иконка шестерни / разработки -->
             <div id="modal-icon" class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 text-3xl animate-bounce">
                 <i class="fa-solid fa-gears"></i>
             </div>
             
-            <!-- Заголовок -->
             <h3 id="modal-title" class="font-heading font-black text-2xl uppercase tracking-tight text-white mb-3">В разработке</h3>
             
-            <!-- Текст -->
-            <p id="modal-text" class="text-gray-400 text-sm leading-relaxed mb-6">
-                Мы активно работаем над стабильным клиентом приватного сервера <span class="text-white font-semibold">Standox</span>. Совсем скоро на этой странице станут доступны ссылки для загрузки на все популярные платформы!
-            </p>
+            <div id="modal-text" class="text-gray-400 text-sm leading-relaxed mb-6 text-left"></div>
 
-            <!-- Telegram Кнопка -->
-            <a href="https://t.me/standoxlive" target="_blank" class="flex items-center justify-center space-x-2 bg-[#229ED9] hover:bg-[#1d8bcb] text-white py-3 px-6 rounded-xl font-heading text-xs font-bold uppercase tracking-wider transition duration-200 shadow-lg shadow-[#229ED9]/20 w-full mb-3">
-                <i class="fa-brands fa-telegram text-base"></i>
-                <span>Следить в Telegram</span>
-            </a>
+            <div id="modal-action-btn"></div>
             
-            <!-- Обычная кнопка закрытия -->
             <button onclick="closeModal()" class="w-full bg-white/5 border border-white/10 hover:bg-white/10 text-gray-300 py-3 rounded-xl font-heading text-xs font-bold uppercase tracking-wider transition duration-200">
                 Понятно
             </button>
         </div>
     </div>
 
-    <!-- СКРИПТЫ УПРАВЛЕНИЯ -->
     <script>
         // Мобильное меню
         const mobileMenu = document.getElementById('mobile-menu');
@@ -405,46 +357,58 @@
             }
         }
 
-        // Модальное окно "В разработке"
+        // Модальное окно
         const modal = document.getElementById('dev-modal');
-        const modalBody = modal.querySelector('div');
+        const modalBody = document.getElementById('modal-container');
         const modalTitle = document.getElementById('modal-title');
         const modalText = document.getElementById('modal-text');
         const modalIcon = document.getElementById('modal-icon');
+        const modalActionBtn = document.getElementById('modal-action-btn');
 
         // Тексты для различных типов кнопок
         const modalContents = {
-            play: {
-                title: "Игра в разработке",
-                text: "Мы активно работаем над клиентом приватного сервера <span class='text-white font-semibold'>Standox</span>. Совсем скоро здесь появятся ссылки для скачивания на все платформы!",
-                icon: "<i class='fa-solid fa-gamepad'></i>"
-            },
-            download: {
-                title: "Скачивание недоступно",
-                text: "Раздел загрузки игрового клиента сейчас находится на техническом обслуживании. Мы готовим новые оптимизированные сборки для Android, iOS и ПК.",
-                icon: "<i class='fa-solid fa-download'></i>"
-            },
-            promo: {
-                title: "Промокоды закрыты",
-                text: "База активации промокодов на голду обновляется к новому сезону. Следите за раздачей свежих кодов в нашем Telegram-канале!",
-                icon: "<i class='fa-solid fa-ticket'></i>"
-            },
             about: {
                 title: "Раздел готовится",
-                text: "Подробное описание всех уникальных игровых режимов, карт и механик сервера Standox сейчас верстается. Мы опубликуем его в ближайшем патче.",
-                icon: "<i class='fa-solid fa-circle-info'></i>"
+                text: "<p class='text-center'>Подробное описание всех уникальных игровых режимов, карт и механик сервера Standox сейчас верстается. Мы опубликуем его в ближайшем патче.</p>",
+                icon: "<i class='fa-solid fa-circle-info'></i>",
+                align: "text-center",
+                action: ""
+            },
+            privacy: {
+                title: "Конфиденциальность",
+                icon: "<i class='fa-solid fa-shield-halved'></i>",
+                align: "text-left",
+                text: `<div class="space-y-3 h-60 overflow-y-auto pr-2 text-xs text-gray-400 font-sans">
+                        <p><strong class="text-white">1. Сбор данных:</strong> Наш игровой клиент собирает только технические идентификаторы устройства (например, ID устройства) исключительно для создания игрового аккаунта, сохранения прогресса инвентаря и статистики игрока.</p>
+                        <p><strong class="text-white">2. Использование данных:</strong> Собранные данные не передаются третьим лицам и используются исключительно внутри инфраструктуры приватного сервера Standox.</p>
+                        <p><strong class="text-white">3. Безопасность:</strong> Мы не запрашиваем пароли от ваших официальных аккаунтов Google, Apple или Axlebolt. Все транзакции и данные доната обрабатываются через безопасные сессии бота.</p>
+                        <p><strong class="text-white">4. Отказ от ответственности:</strong> Данный проект является фанатским программным обеспечением. Мы никак не связаны с разработчиками оригинальной игры Standoff 2 (Axlebolt Ltd.). Используя сервер, вы понимаете, что весь игровой процесс изолирован от оригинальной игры.</p>
+                       </div>`,
+                action: ""
             }
         };
 
-        function openModal(type = 'play') {
-            // Установка соответствующего текста
-            const content = modalContents[type] || modalContents.play;
+        function openModal(type = 'about') {
+            const content = modalContents[type] || modalContents.about;
             modalTitle.innerHTML = content.title;
             modalText.innerHTML = content.text;
             modalIcon.innerHTML = content.icon;
+            modalActionBtn.innerHTML = content.action || '';
+
+            // Меняем выравнивание в зависимости от типа
+            if (content.align === "text-left") {
+                modalText.classList.remove('text-center');
+                modalText.classList.add('text-left');
+                modalBody.classList.remove('max-w-sm');
+                modalBody.classList.add('max-w-md'); // делаем чуть шире для текста политики
+            } else {
+                modalText.classList.remove('text-left');
+                modalText.classList.add('text-center');
+                modalBody.classList.remove('max-w-md');
+                modalBody.classList.add('max-w-sm');
+            }
 
             modal.classList.remove('hidden');
-            // Небольшая задержка для плавного появления
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 modalBody.classList.remove('scale-95');
@@ -463,7 +427,6 @@
             document.body.style.overflow = '';
         }
 
-        // Закрытие модального окна при клике на темный фон вне тела модалки
         modal.addEventListener('click', function(event) {
             if (event.target === modal) {
                 closeModal();
